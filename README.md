@@ -6,7 +6,7 @@ Bootcamp na Devsuperior, que é um curso com o foco em programação com prátic
 
 ## Modelo conceitual do Catalog
 
-![Modelo conceitual](https://github.com/josivaldobatista/catalog/blob/main/assets/Captura%20de%20Tela%202021-02-01%20às%2012.01.27.png)
+![Modelo conceitual](https://github.com/josivaldobatista/catalog-products/blob/main/assets/modelo_conceitual.png)
 
 ## Figma do projeto do frontend
 
