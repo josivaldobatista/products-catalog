@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>com.jfb</groupId>
-	<artifactId>catalog-products</artifactId>
+	<artifactId>products-catalog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>catalog-products</name>
+	<name>products-catalog</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

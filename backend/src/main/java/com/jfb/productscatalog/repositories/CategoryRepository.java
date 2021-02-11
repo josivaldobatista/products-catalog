@@ -1,6 +1,6 @@
-package com.jfb.catalogproducts.repositories;
+package com.jfb.productscatalog.repositories;
 
-import com.jfb.catalogproducts.entities.Category;
+import com.jfb.productscatalog.entities.Category;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

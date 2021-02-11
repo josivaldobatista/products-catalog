@@ -1,13 +1,13 @@
-package com.jfb.catalogproducts;
+package com.jfb.productscatalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CatalogProductsApplication {
+public class ProductsCatalogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CatalogProductsApplication.class, args);
+		SpringApplication.run(ProductsCatalogApplication.class, args);
 	}
 
 }

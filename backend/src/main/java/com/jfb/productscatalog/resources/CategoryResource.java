@@ -1,10 +1,10 @@
-package com.jfb.catalogproducts.resources;
+package com.jfb.productscatalog.resources;
 
 import java.net.URI;
 import java.util.List;
 
-import com.jfb.catalogproducts.dto.CategoryDTO;
-import com.jfb.catalogproducts.services.CategoryService;
+import com.jfb.productscatalog.dto.CategoryDTO;
+import com.jfb.productscatalog.services.CategoryService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

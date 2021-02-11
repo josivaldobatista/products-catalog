@@ -1,4 +1,4 @@
-package com.jfb.catalogproducts.entities;
+package com.jfb.productscatalog.entities;
 
 import java.io.Serializable;
 import java.util.Objects;

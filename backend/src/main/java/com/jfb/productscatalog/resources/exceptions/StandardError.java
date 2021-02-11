@@ -1,4 +1,4 @@
-package com.jfb.catalogproducts.resources.exceptions;
+package com.jfb.productscatalog.resources.exceptions;
 
 import java.io.Serializable;
 import java.time.Instant;

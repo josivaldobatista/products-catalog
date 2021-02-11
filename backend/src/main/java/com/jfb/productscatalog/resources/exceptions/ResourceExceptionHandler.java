@@ -1,10 +1,10 @@
-package com.jfb.catalogproducts.resources.exceptions;
+package com.jfb.productscatalog.resources.exceptions;
 
 import java.time.Instant;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.jfb.catalogproducts.services.exceptions.ResourceNotFoundException;
+import com.jfb.productscatalog.services.exceptions.ResourceNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

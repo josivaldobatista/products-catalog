@@ -1,8 +1,8 @@
-package com.jfb.catalogproducts.dto;
+package com.jfb.productscatalog.dto;
 
 import java.io.Serializable;
 
-import com.jfb.catalogproducts.entities.Category;
+import com.jfb.productscatalog.entities.Category;
 
 public class CategoryDTO implements Serializable {
   private static final long serialVersionUID = 1L;

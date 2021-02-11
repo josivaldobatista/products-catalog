@@ -1,4 +1,4 @@
-package com.jfb.catalogproducts.services;
+package com.jfb.productscatalog.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
-import com.jfb.catalogproducts.dto.CategoryDTO;
-import com.jfb.catalogproducts.entities.Category;
-import com.jfb.catalogproducts.repositories.CategoryRepository;
-import com.jfb.catalogproducts.services.exceptions.ResourceNotFoundException;
+import com.jfb.productscatalog.dto.CategoryDTO;
+import com.jfb.productscatalog.entities.Category;
+import com.jfb.productscatalog.repositories.CategoryRepository;
+import com.jfb.productscatalog.services.exceptions.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
