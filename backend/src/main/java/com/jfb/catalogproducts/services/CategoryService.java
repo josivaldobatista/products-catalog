@@ -1,11 +1,13 @@
 package com.jfb.catalogproducts.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import com.jfb.catalogproducts.dto.CategoryDTO;
 import com.jfb.catalogproducts.entities.Category;
 import com.jfb.catalogproducts.repositories.CategoryRepository;
+import com.jfb.catalogproducts.services.exceptions.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +23,11 @@ public class CategoryService {
   public List<CategoryDTO> findAll() {
     List<Category> list = repository.findAll();
     return list.stream().map(x -> new CategoryDTO(x)).collect(Collectors.toList());
+  }
+
+  public CategoryDTO findById(Long id) {
+    Optional<Category> obj = repository.findById(id);
+    Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada"));
+    return new CategoryDTO(entity);
   }
 }
