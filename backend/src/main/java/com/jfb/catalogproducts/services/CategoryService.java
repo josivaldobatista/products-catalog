@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import com.jfb.catalogproducts.dto.CategoryDTO;
 import com.jfb.catalogproducts.entities.Category;
 import com.jfb.catalogproducts.repositories.CategoryRepository;
@@ -38,6 +40,18 @@ public class CategoryService {
     entity.setName(dto.getName());
     entity = repository.save(entity);
     return new CategoryDTO(entity);
+  }
+
+  @Transactional
+  public CategoryDTO update(Long id, CategoryDTO dto) {
+    try {
+      Category entity = repository.getOne(id);
+      entity.setName(dto.getName());
+      entity = repository.save(entity);
+      return new CategoryDTO(entity);
+    } catch (EntityNotFoundException e) {
+      throw new ResourceNotFoundException("Id da categoria informada não encontrado: " + id);
+    }
   }
 
 }
