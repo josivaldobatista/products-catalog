@@ -7,6 +7,7 @@ import javax.persistence.EntityNotFoundException;
 import com.jfb.productscatalog.dto.RoleDTO;
 import com.jfb.productscatalog.dto.UserDTO;
 import com.jfb.productscatalog.dto.UserInsertDTO;
+import com.jfb.productscatalog.dto.UserUpdateDTO;
 import com.jfb.productscatalog.entities.Role;
 import com.jfb.productscatalog.entities.User;
 import com.jfb.productscatalog.repositories.RoleRepository;
@@ -58,7 +59,7 @@ public class UserService {
   }
 
   @Transactional
-  public UserDTO update(Long id, UserDTO dto) {
+  public UserDTO update(Long id, UserUpdateDTO dto) {
     try {
       User entity = repository.getOne(id);
       copyDtoToEntity(dto, entity);
