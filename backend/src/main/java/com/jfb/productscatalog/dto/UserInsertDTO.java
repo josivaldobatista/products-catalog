@@ -1,5 +1,8 @@
 package com.jfb.productscatalog.dto;
 
+import com.jfb.productscatalog.services.validations.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO {
   private static final long serialVersionUID = 1L;
 
