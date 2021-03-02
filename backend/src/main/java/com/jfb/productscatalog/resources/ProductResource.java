@@ -31,7 +31,22 @@ public class ProductResource {
   private ProductService service;
 
   @GetMapping
-  public ResponseEntity<Page<ProductDTO>> findAll(
+    public ResponseEntity<Page<ProductDTO>> findAll(
+        @RequestParam(value = "categoryId", defaultValue = "0") Long categoryId, // 0 padrão para categoria não informada
+        @RequestParam(value = "name", defaultValue = "") String name,
+        @RequestParam(value = "page", defaultValue = "0") Integer page,
+        @RequestParam(value = "linesPerPage", defaultValue = "12") Integer linesPerPage,
+        @RequestParam(value = "direction", defaultValue = "ASC") String direction,
+        @RequestParam(value = "orderBy", defaultValue = "name") String orderBy
+    ) {
+        PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+        Page<ProductDTO> list = service.find(categoryId, name.trim(), pageRequest); // trim() tira espaços em branco.
+        return ResponseEntity.ok().body(list);
+    }
+
+  // Resolvendo o problema n + 1 com a query abaixo de Products e Category (ESTUDO).
+  @GetMapping(value = "/paged")
+  public ResponseEntity<Page<ProductDTO>> findAllPaged(
       @RequestParam(value = "page", defaultValue = "0") Integer page,
       @RequestParam(value = "linesPerPage", defaultValue = "12") Integer linesPerPage,
       @RequestParam(value = "direction", defaultValue = "ASC") String direction,
