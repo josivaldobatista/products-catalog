@@ -29,7 +29,7 @@ public class S3Service {
 
   public URL uploadFile(MultipartFile file) {
     try {
-      String originalName = file.getOriginalFilename();
+      String originalName = file.getOriginalFilename(); 
       String extension = FilenameUtils.getExtension(originalName);
       String fileName = Instant.now().toDate().getTime() + "." + extension;
 
