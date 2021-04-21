@@ -1,6 +1,5 @@
 package com.jfb.productscatalog.services;
 
-import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +9,6 @@ import javax.persistence.EntityNotFoundException;
 
 import com.jfb.productscatalog.dto.CategoryDTO;
 import com.jfb.productscatalog.dto.ProductDTO;
-import com.jfb.productscatalog.dto.UriDTO;
 import com.jfb.productscatalog.entities.Category;
 import com.jfb.productscatalog.entities.Product;
 import com.jfb.productscatalog.repositories.CategoryRepository;
@@ -25,7 +23,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class ProductService {
@@ -35,9 +32,6 @@ public class ProductService {
 
   @Autowired
   private CategoryRepository categoryRepository;
-
-  @Autowired
-  private S3Service s3Service;
 
   // Resolvendo o problema n + 1 com a query abaixo de Products e Category
   // (ESTUDO).
@@ -105,11 +99,6 @@ public class ProductService {
       Category category = categoryRepository.getOne(catDto.getId());
       entity.getCategories().add(category);
     }
-  }
-
-  public UriDTO uploadFile(MultipartFile file) {
-    URL url = s3Service.uploadFile(file);
-    return new UriDTO(url.toString());
   }
 
 }
